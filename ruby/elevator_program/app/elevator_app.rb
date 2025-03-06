@@ -19,6 +19,18 @@ require_relative "elevator_simulation"
 #     Support multiple elevators in a single system.
 #     Simulate concurrent requests where multiple people request an elevator simultaneously.
 
+
+=begin
+TODO:
+Add an integration tests to the elevator by simulating the loop via a test. The test would function similarly to our simulation function except we would manually iterate through the loop to assert elevator states.
+
+Next, I would implement a solution with multiple elevators, this requires modifying the simulation to iterate through all teh buildings elevators and also adding logic to the building as the entrypoint for ElevatorRequests, i.e. we would separate the elevator request command further since outside commands go through the building while inside commands come from a specific elevator.
+
+This would require logic to determine the nearest idle elevator, if there are no idle elevators some algorithm to determine which elevator would most likely finish first. Since the building is the entrypoint of commands and our commands are in a list and act as a queue, operating on the first one, I do not foresee any concurrency concerns especially since everything is functional.
+
+Finally, for performance we could consider switching our list of commands into a priority queue.
+=end
+
 def sample_function()
     return "Hello World"
 end
