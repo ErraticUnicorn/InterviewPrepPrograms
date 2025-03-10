@@ -47,7 +47,6 @@ module ProductMatcher
       
       # Second pass: handle remaining items with the smallest appropriate box
       if remaining > 0
-        # Find the smallest box that can fit the remaining items
         appropriate_size = sizes.reverse.find { |size| size.quantity >= remaining } || sizes.last
         boxes_to_create << [appropriate_size.box_type, remaining]
         remaining = 0
