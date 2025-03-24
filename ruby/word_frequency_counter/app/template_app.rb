@@ -31,6 +31,7 @@ text = "Hello world! This is a test. Hello again, world."
 output = word_frequency(text)
 puts output
 expected_output = {
+    "a" => 1,
     "again" => 1,
     "hello" => 2,
     "is" => 1,
